@@ -1,27 +1,21 @@
+import { useState } from "react";
+
+
+
+
+
 function App(){
 
-  // alert(sum())
+// const [val,setval]=useState("anil sidhu")  this will be used when we have to give a default value
+const [val,setval]=useState("")
   return(
     <div>
-    <h1>First Component {sum()}</h1>
-     <Fruit />
-     <Colors />
+     <h1>Get input field value</h1>
+     <input type="text"   value={val} onChange={(event)=>setval(event.target.value)} placeholder="enter username"/>
+     <h1>{val}</h1>
+     <button onClick={()=>setval("")}>clear Value</button>
     </div>
   )
 }
-function Fruit(){
-  return(
-    <h1>Apple</h1>
-  )
-}
 
-function Colors(){
-  return(
-    <h1>Red Color</h1>
-  )
-}
-
-function sum(){
-  return 10+10
-}
 export default App;
